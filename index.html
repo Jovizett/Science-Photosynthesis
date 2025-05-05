@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photosynthesis Explorer | Science Project</title>
+    <style>
+        :root {
+            --primary-green: #2E7D32;
+            --secondary-green: #81C784;
+            --light-yellow: #FFF59D;
+            --accent-orange: #FFB74D;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: linear-gradient(to bottom right, var(--light-yellow), #ffffff);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: var(--primary-green);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            color: var(--primary-green);
+            border-bottom: 3px solid var(--accent-orange);
+            padding-bottom: 0.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .photo-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .photo-img:hover {
+            transform: scale(1.03);
+        }
+
+        .interactive-box {
+            background: var(--secondary-green);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .credits {
+            text-align: center;
+            padding: 3rem;
+            background: var(--primary-green);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .fact-carousel {
+            background: var(--light-yellow);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 3rem 0;
+            animation: carousel 12s infinite;
+            font-size: 1.1rem;
+        }
+
+        /* Desktop-specific styles */
+        @media (min-width: 1024px) {
+            .container {
+                padding: 4rem;
+            }
+
+            .section {
+                margin: 3rem 0;
+                padding: 4rem;
+            }
+
+            .content-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+                align-items: center;
+            }
+
+            .text-content {
+                max-width: 600px;
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .photo-img {
+                height: 400px;
+            }
+
+            .interactive-box {
+                padding: 3rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🌿 Photosynthesis Explorer 🌞</h1>
+        <p>Comprehensive Guide to Plant Photosynthesis Process</p>
+    </header>
+
+    <div class="container">
+        <!-- Section 1: Definition -->
+        <section class="section">
+            <div class="content-grid">
+                <div class="text-content">
+                    <h2>What is Photosynthesis?</h2>
+                    <p>Photosynthesis is a complex biochemical process where plants, algae, and certain bacteria convert light energy into chemical energy. This process occurs in chloroplasts and involves a series of chemical reactions that transform carbon dioxide and water into glucose and oxygen.</p>
+                    
+                    <div class="interactive-box">
+                        <h3>Quick Fact!</h3>
+                        <p>💡 70% of Earth's oxygen comes from phytoplankton photosynthesis in oceans</p>
+                    </div>
+                </div>
+                <div class="image-grid">
+                    <img src="https://images.unsplash.com/photo-1585011658237-4caeadf4b979" alt="Leaf structure" class="photo-img">
+                    <img src="https://images.unsplash.com/photo-1593078166038-2b7b9df4d9e3" alt="Chloroplasts" class="photo-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Process -->
+        <section class="section" style="animation-delay: 0.2s;">
+            <h2>Photosynthesis Stages</h2>
+            <div class="content-grid">
+                <div>
+                    <h3>1. Light Reactions</h3>
+                    <p>Occurs in thylakoid membranes of chloroplasts. Uses solar energy to split water (photolysis) producing ATP, NADPH, and O₂.</p>
+                    
+                    <h3>2. Dark Reactions (Calvin Cycle)</h3>
+                    <p>Occurs in the stroma. Uses ATP and NADPH to convert CO₂ into glucose through Calvin-Benson cycle.</p>
+
+                    <div class="fact-carousel">
+                        <p>🌱 A single leaf can produce 5ml oxygen per hour!</p>
+                        <p>🔬 Over 100 different enzymes involved in photosynthesis</p>
+                        <p>🌍 This process has been occurring for 3.4 billion years</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1614303254753-8a68f5c032a8" alt="Photosynthesis Diagram" class="photo-img">
+            </div>
+        </section>
+
+        <!-- Section 3: Factors -->
+        <section class="section" style="animation-delay: 0.4s;">
+            <div class="content-grid">
+                <div>
+                    <h2>Factors Affecting Photosynthesis Rate</h2>
+                    <ul>
+                        <li><strong>Light Intensity:</strong> Increases rate until saturation point</li>
+                        <li><strong>CO₂ Concentration:</strong> Directly proportional to certain limits</li>
+                        <li><strong>Temperature:</strong> Optimal 25-35°C for most plants</li>
+                        <li><strong>Water Availability:</strong> Affects stomatal opening</li>
+                        <li><strong>Photosynthetic Pigments:</strong> Chlorophyll a, b, carotenoids</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Why is Photosynthesis Important?</h2>
+                    <ul>
+                        <li>Produces oxygen for respiration</li>
+                        <li>Base of ecological food chains</li>
+                        <li>Reduces atmospheric carbon dioxide</li>
+                        <li>Creates fossil fuels over geological time</li>
+                        <li>Foundation of global food production</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="credits">
+        <h3>Made By Team Photosynthesizers 🌟</h3>
+        <p>Jefferson | Dgan | Gwen | Felicia W | Vinesca</p>
+        <p>🔬 Science Project 2024 🔍</p>
+    </div>
+</body>
+</html>
